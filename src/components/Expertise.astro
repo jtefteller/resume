@@ -1,0 +1,19 @@
+---
+interface Props {
+	classList: string
+	block: boolean
+}
+const {classList, block} = Astro.props
+---
+
+<div class:list={[classList]}>
+	<h3 class="text-xl font-bold">Expertise</h3>
+	{
+		block ? <p>Cloud Computing - Full Stack Development - Container Orchestration - ETL & Data Analytics - API Integrations</p> :
+	<p>Cloud Computing</p>
+	<p>Full Stack Development</p>
+	<p>Container Orchestration</p>
+	<p>ETL & Data Analytics</p>
+	<p>API Integrations</p>
+	}
+</div>

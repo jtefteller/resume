@@ -1,0 +1,18 @@
+---
+interface Props {
+	classList: string
+	block: boolean
+}
+const {classList, block} = Astro.props
+---
+
+<div class:list={[classList]}>
+	<h3 class="text-xl font-bold">Languages</h3>
+	{block ? <p>Golang - Python - Typescript - Ruby - Perl</p> : 
+	<p>Golang</p>
+	<p>Python</p>
+	<p>Typescript</p>
+	<p>Ruby</p>
+	<p>Perl</p>
+}
+</div>

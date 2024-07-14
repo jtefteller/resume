@@ -1,0 +1,22 @@
+---
+interface Props {
+	classList: string
+	showContact: boolean
+}
+const {classList, showContact} = Astro.props
+---
+
+<!-- <ul class="my-8 leading-8"> -->
+ <div class:list={[classList]}>
+	{ showContact ? 
+		<h3 class="text-xl font-bold">Contact</h3>
+		: null }
+	<ul>
+		<li><i class="fa fa-phone"></i> (870) 589-1080</li>
+		<li class='break-words'><i class="fa fa-at"></i> justintefteller@gmail.com</li>
+		<li><i class="fa fa-map-marker"></i> Arkansas</li>
+		<li><i class="fa fa-rss-square"></i> <a class="underline text-blue-500" href="https://justintefteller.com" class="break-words">www.justintefteller.com</a></li>
+		<li><i class="fa fa-github"></i> <a class="underline text-blue-500" href="https://github.com/jtefteller">  5.8k+ Contributions</a></li>
+		<li><i class="fa fa-linkedin"></i> <a class="underline text-blue-500" href="https://www.linkedin.com/in/justin-tefteller-104ab1136/">LinkedIn</a></li>
+	</ul>
+</div>

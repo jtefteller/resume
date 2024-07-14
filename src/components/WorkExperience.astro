@@ -1,0 +1,47 @@
+---
+const experiences = 
+[
+	{
+		jobTitle: "Software Engineer - Senior",
+		companyName: "WPEngine",
+		where: "Remote - (Austin, TX)",
+		dateRange: "July 2022 - Present",
+		resps: [
+			"Spearheaded and orchestrated a cross-functional team collaboration on a key company initiative, Full Page Caching, and successfully integrated this solution with Cloudflare across all domains on the primary network, resulting in a 300% reduction in latency and significant improvements in all Core Web Vitals metrics.",
+			"Engineered and collaborated on an Nginx enforcement mechanism that systematically transitioned cohorts of customers from the expensive legacy network to an \"advanced network\" (Cloudflare integration), resulting in a 30% reduction in network bandwidth costs.",
+			"Designed, maintained and implemented features for the three major network integrations with Cloudflare that routinely saw petabytes of ingress and egress traffic.",
+			"Architected a gRPC solution that aggregates network and domain data across the entire WPEngine platform in order to facilitate scalability of all of the platform microservices",
+			"Demonstrated strong teamwork and leadership by developing essential production automation tools in Golang and Python which significantly reduced the workload and on-call duties of engineers."
+
+		],
+	},
+	{
+		jobTitle: "Software Engineer",
+		companyName: "Cetec ERP",
+		where: "Remote - (Austin, TX)",
+		dateRange: "Sept. 2019 - July 2022",
+		resps: [
+			"Architected a comprehensive frontend testing suite using Cypress, automating a previously manual full application diagnostic check.", 
+			"Redesigned the data import process, significantly enhancing efficiency and contributing to approximately 50% of each project's revenue stream.",
+			"Integrated with multiple api (PayChex and CalcuQuote) to automate and streamline external customer requirements.",
+			"Designed and implemented hundreds of features across various technologies (Golang, Javascript, and Perl)"
+		],
+	},
+]
+const expLen = experiences.length - 1
+---
+<div class="mt-8">
+	<h3 class="text-xl font-bold">Work Experience</h3>
+	{experiences.map((e, i) => 
+		<div class="relative">
+			<span class="absolute h-1.5 w-1.5 top-3 left-1.5 rounded-full ring-1 ring-black bg-black"></span>
+			<span class="absolute top-3 left-2 h-full border border-black"></span>
+			<h3 class="pl-5 text-lg font-semibold">{e.jobTitle}</h3>
+			<h4 class="pl-5 text-md">{e.companyName} | {e.where}</h4>
+			<h4 class="pl-5 text-md font-light underline pb-4 text-gray-500">{e.dateRange}</h4>
+			<ul class:list={[i !== expLen ? "pb-5" : null, "pl-5 leading-6" ]}>{
+				e.resps.map((r, i) => <li class="pb-2"> ⇰ {r}</li>)
+			}</ul>
+		</div>
+	)}
+</div>

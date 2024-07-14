@@ -1,0 +1,12 @@
+---
+	interface Props {
+		heading: string
+		subHeading: string
+	}
+
+	const {heading, subHeading} = Astro.props
+---
+<section class="mt-10 md:mt-20 border-b border-b-black">
+	<h1 class="text-4xl md:text-6xl">{heading}</h1>
+	<h4 class="text-xl md:text-2xl font-light text-gray-600">{subHeading}</h4>
+</section>

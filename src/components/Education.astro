@@ -1,0 +1,14 @@
+---
+interface Props {
+	classList: string
+}
+const {classList} = Astro.props
+---
+
+<div class:list={[classList]}>
+	<h3 class="text-xl font-bold">Education</h3>
+	<h4 class="text-md font-semibold">Bachelor of International Business</h4>
+	<h5 class="text-md font-medium">University of Arkansas</h5>
+	<p>2010 - 2015</p>
+</div>
+

@@ -1,0 +1,11 @@
+---
+interface Props {
+	classList: string
+}
+
+const {classList} = Astro.props
+---
+
+
+<img class:list={["h-32 w-32 rounded-full md:h-32 md:w-32 lg:h-48 lg:w-48", classList]} src="https://scontent.ffyv1-1.fna.fbcdn.net/v/t39.30808-6/435925138_10160031495201917_3797194592693747111_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TO_sn3hW638Q7kNvgGPucZ_&_nc_ht=scontent.ffyv1-1.fna&oh=00_AYB4qk-ue0_pXm-FcY7mCimUpqlU5MjhcioydFf2gOimgg&oe=6693CB0A" alt="">
+<!-- <img class="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt=""> -->

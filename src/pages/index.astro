@@ -1,0 +1,53 @@
+---
+import ResumeLayout from '../layouts/Resume.astro';
+import Grid from '../components/Grid.astro';
+import Aside from '../components/Aside.astro';
+import Main from '../components/Main.astro';
+import Profile from '../components/Profile.astro' 
+import ContactInfo from '../components/ContactInfo.astro';
+import Education from '../components/Education.astro';
+import Expertise from '../components/Expertise.astro';
+import Languages from '../components/Languages.astro';
+import Heading from '../components/Heading.astro';
+import AboutMe from '../components/AboutMe.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import Extra from '../components/Extra.astro';
+
+const years = new Date().getFullYear() - 2019
+---
+
+<ResumeLayout title="Justin Tefteller's Resume">
+	<div class="absolute w-screen h-full -z-10 bg-zinc-900"></div>
+	<main id="resume" class="w-screen min-h-screen m-auto max-w-7xl p-8 bg-zinc-100">
+		<Grid>
+			<Aside classList="hidden col-span-4 lg:col-span-3 md:flex flex-col bg-zinc-200 md:p-8">
+				<Profile classList="hidden md:block"/>
+				<ContactInfo classList='my-8 leading-8' showContact={false} />
+				<div class="mt-8">
+					<Education classList='mb-8'/>
+					<Expertise  classList='mb-8' block={false}/>
+					<Languages classList='' block={false}/>
+				</div>
+			</Aside>
+			<Main>
+				<Profile classList='md:hidden m-auto'/>
+				<Heading heading='Justin Tefteller' subHeading=`Senior Software Engineer - ${years}+ years`/>
+				<Aside classList="md:hidden grid grid-cols-4 gap-4 bg-zinc-200 p-8">
+					<ContactInfo classList='col-span-4' showContact={true}/>
+					<Education classList='col-span-4'/>
+					<Expertise classList='col-span-4' block={true}/>
+					<Languages classList='col-span-4' block={true}/>
+				</Aside>
+				<AboutMe/>
+				<WorkExperience/>
+				<Extra />
+			</Main>	
+		</Grid>
+	</main>
+</ResumeLayout>
+<style>
+	@page  {
+		/* size: letter;  */
+		margin: 10mm;
+	}
+</style>

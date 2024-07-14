@@ -1,0 +1,27 @@
+---
+
+---
+<button>
+ Get PDF	
+</button>
+
+<script>
+	const button = document.querySelector("button");
+
+	function generatePDF() {
+		// Choose the element that your content will be rendered to.
+		const element = document.getElementById('resume');
+		// Choose the element and save the PDF for your user.
+		var opt = {
+			margin:       .25,
+			filename:     'justintefteller_resume.pdf',
+			image:        { type: 'jpeg', quality: 0.98 },
+			html2canvas:  { scale: 1 },
+			jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+		};
+
+		html2pdf().from(element).set(opt).toPdf().save();
+	}
+
+	button?.addEventListener('click', generatePDF);
+</script>
