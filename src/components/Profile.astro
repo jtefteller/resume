@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import portrait from '../images/portrait.jpg';
+
 interface Props {
 	classList: string
 }
@@ -6,5 +9,4 @@ interface Props {
 const {classList} = Astro.props
 ---
 
-
-<img class:list={["h-32 w-32 rounded-full md:h-32 md:w-32 lg:h-48 lg:w-48", classList]} src="/resume/public/portrait.jpg" alt="">
+<Image src={portrait} class:list={["h-56 w-48 rounded-full", classList]} alt="A portrait of me" />
